@@ -1,0 +1,10 @@
+def bubbleSort(arr, low, high):
+    for i in range(low, high):
+        for j in range(low, high - i):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+arr = [5,3,2,5,7,2,75,8,34,56,32,7565,5454,34,6675]
+bubbleSort(arr, 0, len(arr)- 1)
+print(arr)
