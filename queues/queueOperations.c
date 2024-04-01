@@ -46,13 +46,8 @@ void enqueue(int item)
     if (isEmpty())
     {
         front = 0;
-        rear = 0;
     }
-    else // all other cases
-    {
-        rear++;
-    }
-    queue[rear] = item;
+    queue[++rear] = item;
     printf("Inserted the element %d into the queue at position %d\n", item, rear);
 }
 
