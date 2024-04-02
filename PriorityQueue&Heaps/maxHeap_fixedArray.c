@@ -32,14 +32,9 @@ void heapify(int arr[], int n, int i)
 
 void buildHeap(int arr[], int n)
 {
-    for (int i = 0; i <= n-1; i++)
+    for (int i = n / 2 - 1; i >= 0; i--)
     {
         heapify(arr, n, i);
-        for (int j = 0; j < n; j++)
-        {
-            printf("%d ", arr[j]);
-        }
-        printf("\n");
     }
 }
 
@@ -58,13 +53,13 @@ int extractMax(int arr[], int *n)
 void heapInsert(int arr[], int item, int *n)
 {
     (*n)++;
-    
+
     int i = *n - 1; // store the item index in a variable to iterate over
 
     while (i > 0 && arr[(i - 1) / 2] < item)
     {
-        arr[i] = arr[(i-1)/2];
-        i = (i-1)/2;
+        arr[i] = arr[(i - 1) / 2];
+        i = (i - 1) / 2;
     }
 
     arr[i] = item;
@@ -75,16 +70,14 @@ void printTree(int arr[], int n, int index, int space)
     if (index >= n)
         return;
 
-    space += 10;
-
-    printTree(arr, n, 2 * index + 2, space);
+    printTree(arr, n, 2 * index + 2, space + 10);
 
     for (int i = 0; i <= space; i++)
         printf(" ");
 
     printf("%d\n", arr[index]);
 
-    printTree(arr, n, 2 * index + 1, space);
+    printTree(arr, n, 2 * index + 1, space + 10);
 }
 
 int main()
