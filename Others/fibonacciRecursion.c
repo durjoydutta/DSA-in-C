@@ -20,7 +20,7 @@ int main() {
     int num , result;
 
     do {
-    printf("Enter the element number: ");
+    printf("\nEnter the element number: ");
     scanf("%d", &num);
 
     result = fibonacci(num);
